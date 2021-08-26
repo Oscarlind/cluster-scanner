@@ -24,6 +24,7 @@ def get_failed_pods(v1):
                 failed_pods[pod.metadata.namespace].append(pod.metadata.name + ": " + pod.status.container_statuses[0].state.terminated.reason)
                 failed_pods_table.add_row([pod.metadata.namespace, pod.metadata.name, pod.status.container_statuses[0].state.terminated.reason])
             else:
+                # if "containerCreating" in pod.status(?) pass, else: ?
                 failed_pods[pod.metadata.namespace].append(pod.metadata.name + ": " + pod.status.phase)
                 failed_pods_table.add_row([pod.metadata.namespace, pod.metadata.name, pod.status.phase])
                 number_of_failed_pods +=1

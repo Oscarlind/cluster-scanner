@@ -1,12 +1,11 @@
 #!/usr/bin/python3
 import openshift as oc
-import urllib3
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 from openshift.dynamic import DynamicClient
 from kubernetes import client, config
 from prettytable import PrettyTable
 
-
+# Needs a rewrite as len(tag.status.tags) does not work when tags/imagestreams are being created.
+# Test by running oc new-app <app> and run the scan.
 def check_istags(dyn_client):
     tag_dict = {}
     istag_table = PrettyTable(['Namespace', 'ImageStream', 'Number of tags'])

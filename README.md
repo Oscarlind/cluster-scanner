@@ -188,6 +188,14 @@ Number of pods without requests specified:  7
 ════════════════════════════════════╣ Scan Complete ╠════════════════════════════════════
 
 
+Known issues and limitations
+------------------
+* Pods with the status "ContainerCreating" or "PodInitializing" gets included with failed pods.
+* The istag scan fails when tags are getting created while the scan runs. Rewrite of the check is planned.
+* API URL is not gathered in a clean and consistent manner. Needs a rewrite.
+
+
+
 Author Information
 ------------------
 
