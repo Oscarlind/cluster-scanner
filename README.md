@@ -186,6 +186,7 @@ Pods without requests specifed:
 
 Number of pods without requests specified:  7
 ════════════════════════════════════╣ Scan Complete ╠════════════════════════════════════
+```
 
 
 Known issues and limitations
